@@ -1,0 +1,93 @@
+:root {
+  --primary: #7289da;
+  --dark-1: #36393f;
+  --dark-2: #2c2f33;
+  --dark-3: #23272a;
+  --dark-4: #1f2124;
+  --light-1: #eee;
+  --light-2: #ddd;
+  --light-3: #ccc;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background-color: var(--dark-1);
+  color: var(dark-4);
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 25px var(--dark-4);
+  width: 400px;
+
+  > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 100px;
+    width: 100px;
+    transition: all 0.2s ease-in-out;
+  }
+  > .num {
+    background-color: var(--light-2);
+  }
+  > .operator {
+    background-color: var(--dark-3);
+    color: var(--light-1);
+  }
+  > .backspace,
+  > .equal {
+    background-color: var(--light-3);
+  }
+  > .display {
+    width: 100%;
+    grid-column: 1 /-1;
+    background-color: var(--dark-2);
+    color: var(--light-1);
+    font-weight: bold;
+    overflow: hidden;
+    justify-content: left !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 2rem;
+    text-align: left;
+
+    & .display__big {
+      font-size: 4rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    & .display__small {
+      font-size: 1.5rem;
+      text-align: left;
+      width: 100%;
+      color: var(--light-3);
+      height: 1.5rem;
+    }
+  }
+  > :not(.display) {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background-color: var(--primary);
+    }
+
+    &:active {
+      background-color: var(--primary);
+      filter: brightness(1.2);
+    }
+  }
+}
