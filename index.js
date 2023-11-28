@@ -1,26 +1,25 @@
 import elements from "./elements.js";
 
 /**
- * @param {number} firstNumber
- * @param {number | null} secondNumber
- * @param {string | null} currentOperator
+ * @param {number} firstNumber The first number in the calculation
+ * @param {number | null} secondNumber The second number in the calculation
+ * @param {string | null} currentOperator The current operator in the calculation
  */
 
+// Inizialiting the needed variables
 let firstNumber = 0;
 let currentOperator = null;
 let secondNumber = null;
 
-// surpress context menu
-document.addEventListener('contextmenu', (event) => event.preventDefault());
-
+// Function to reload the display
 function reloadDisplay() {
-    firstNumber = Number(firstNumber.toFixed(10));
+    // If the number is too big, it will be displayed in exponential notation
     if (currentOperator === null) {
         elements.displayBig.textContent = firstNumber;
         elements.displaySmall.textContent = '';
     } else {
         elements.displayBig.textContent = secondNumber;
-        elements.displaySmall.textContent = `${firstNumber} ${currentOperator}`;
+        elements.displaySmall.textContent = `${firstNumber} ${currentOperator}`
     }
 }
 

@@ -64,9 +64,24 @@ body {
     text-align: left;
 
     & .display__big {
+      white-space: nowrap;
       font-size: 4rem;
       text-align: left;
       width: 100%;
+      overflow-x: scroll;
+      &::-webkit-scrollbar-track {
+        background: var(--dark-2);
+      }
+      &::-webkit-scrollbar-thumb {
+        background: var(--light-3);
+        border-radius: 10px;
+      }
+      &::-webkit-scrollbar {
+        height: 10px;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+      }
     }
 
     & .display__small {
