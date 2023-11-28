@@ -78,18 +78,6 @@ function addOperator(op) {
     }
 }
 
-function doSquare() {
-    if (currentOperator === null) firstNumber *= firstNumber;
-    else secondNumber *= secondNumber;
-    reloadDisplay();
-}
-
-function doRoot() {
-    if (currentOperator === null) firstNumber = Math.sqrt(firstNumber);
-    else secondNumber = Math.sqrt(secondNumber);
-    reloadDisplay();
-}
-
 // functionality of equals button
 elements.equals.addEventListener('click', () => calculate());
 
