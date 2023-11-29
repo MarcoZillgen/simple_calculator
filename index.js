@@ -47,7 +47,10 @@ function calculate() {
             reloadDisplay();
             return alert('You cannot divide by 0!');
         }
-        firstNumber /= secondNumber;
+        // I have to round the result because of the floating point precision,
+        // which would increase the difficulty of the project
+        firstNumber = Math.round(firstNumber / secondNumber);
+
     }
     currentOperator = null;
     secondNumber = null;
